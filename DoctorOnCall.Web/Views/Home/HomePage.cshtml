@@ -1,0 +1,411 @@
+﻿@model IEnumerable<DoctorOnCall.ViewModel.HomeViewModel>
+@{
+    ViewBag.Title = "HomePage";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .search-area {
+        background: #f8f8f8;
+        position: absolute;
+        z-index: 10000;
+        margin-top: 90px;
+        width: 84.5%;
+        padding: 14px;
+    }
+
+    .search-result-area {
+        margin-top: 40px;
+        z-index: 2222;
+        position: absolute;
+        width: 81%;
+        margin-left: 3px;
+        background: red;
+    }
+    .single-feature{
+        background-color:white;
+        padding:10px
+    }
+
+    #banner {
+        background-image: url('../../Photos/Searchcover.JPG');
+        width: 100%;
+        height: 400px;
+    }
+
+    .welcome-text {
+    }
+    #patient-review-heading{
+        padding:20px;
+    }
+    #medical-news{
+        background-color:white;
+    }
+    .news-text {
+        padding: 20px;
+    }
+    .item {
+        background-image: url('../../Photos/b1.jpg');
+        width:100%;
+        height:300px;
+        position:fixed;
+        opacity:0.5;
+    }
+    #patient-profile-img{
+        width:100px;
+        height:100px;
+        
+    }
+</style>
+<div class="container ">
+    <form method="get" action="#" class="form-inline">
+        <div class="row search-area">
+            <div class="col-lg-10 col-md-10 ">
+                <input type="text" class="form-control" name="keyword" placeholder="Search Doctor ... " id="searchkey" onkeyup="SearchStart()" autocomplete="off" style="height: 42px;width: 100%" />
+            </div>
+            <div class="col-lg-2 col-md-2">
+                <button class="btn btn-block" style="margin-top:3px">Search</button>
+            </div>
+            <div class="search-result-area" id="searchresults">
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    var loader = "<ul class='list-group' style='position:absolute;margin-left: 13px;width: 97%; margin-top: 1px;border: 2px solid #d7d8d8;border-top: 0;'>" +
+        "<li class='list-group-item'>" +
+
+        "<center>" +
+        "<img src='/Content/Images/Gif/loading.gif' />" +
+        "</center>" +
+
+        "</li>" +
+        "</ul>";
+    var count = 0;
+    function SearchStart() {
+        if (count == 0) {
+            $("#searchresults").html(loader);
+
+        }
+        var key = $("#searchkey").val();
+        $.ajax({
+
+            url: "/Search/Suggestions?key=" + key,
+            method: "get"
+        }).done(function (results) {
+            count++;
+            $("#searchresults").html(results);
+
+        });
+    }
+</script>
+<div class="container-fluid" id="banner">
+</div>
+
+<!-- Banner Area End -->
+<!-- Feature Area Starts -->
+<section class="feature-area section-padding">
+    <div class="container" >
+        <div class="row" style="margin-top:20px">
+            <div class="col-lg-3 col-md-6">
+               
+                <div class="single-feature text-center item-padding">
+                    <img src="~/Photos/feature1.png" alt="">
+                    <h3>advance technology</h3>
+                    <p class="pt-3">Creeping for female light years that lesser can't evening heaven isn't bearing tree appear</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-feature text-center item-padding mt-4 mt-md-0">
+                    <img src="~/Photos/feature2.png" alt="">
+                    <h3>comfortable place</h3>
+                    <p class="pt-3">Creeping for female light years that lesser can't evening heaven isn't bearing tree appear</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">  
+                <div class="single-feature text-center item-padding mt-4 mt-lg-0">
+                    <img src="~/Photos/feature3.png" alt="">
+                    <h3>Better Service</h3>
+                    <p class="pt-3">Creeping for female light years that lesser can't evening heaven isn't bearing tree appear</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-feature text-center item-padding mt-4 mt-lg-0">
+                    <img src="~/Photos/feature4.png" alt="">
+                    <h3>friendly staff</h3>
+                    <p class="pt-3">Creeping for female light years that lesser can't evening heaven isn't bearing tree appear</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Feature Area End -->
+<!-- Welcome Area Starts -->
+<section class="welcome-area section-padding3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 align-self-center">
+                <div class="welcome-img">
+                    <img src="~/Photos/welcome.png" alt="">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="welcome-text ">
+                    <h2>Welcome to DoctorOnCall</h2>
+                    <p >Subdue whales void god which living don't midst lesser yielding over lights whose. Cattle greater brought sixth fly den dry good tree isn't seed stars were.</p>
+                    <p>Subdue whales void god which living don't midst lesser yielding over lights whose. Cattle greater brought sixth fly den dry good tree isn't seed stars were the boring.</p>
+                    <a href="#" class="btn btn-default">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Welcome Area End -->
+<!-- Patient Area Starts -->
+<div class="patient-area section-padding">
+    <div class="container">
+        <div class="row" id="patient-review-heading">
+            <div class="col-md-6 col-md-offset-3">
+                    <h2 class="text-center">Patient are saying</h2>
+                    <p class="text-center">Green above he cattle god saw day multiply under fill in the cattle fowl a all, living, tree word link available in the service for subdue fruit.</p>
+            </div>
+        </div>
+        <div class="row">
+
+
+            <section>
+                <div id="mainbanner" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#mainbanner" data-slide-to="0" class="active"></li>
+                        <li data-target="#mainbanner" data-slide-to="1"></li>
+                        <li data-target="#mainbanner" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="carousel-caption">
+                                <img src="~/Photos/shahid.jpg" alt="patient-profile-img" id="patient-profile-img" class="img-circle"/>
+                                <h3>Shahid Hussain</h3>
+                                <p>Allah ap sab ko lambi zindagi k sat sat iman k sat zindgi guzarne ki tufeeq ata farmaye ameen,</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-caption">
+                                <img src="~/Photos/liaqat.PNG" alt="patient-profile-img" id="patient-profile-img" class="img-circle"/>
+                                <h3>Liaqat Ali</h3>
+                                <p>very well experience real hope for Patients</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="carousel-caption">
+                                <img src="~/Photos/irshad.jpg" alt="patient-profile-img" id="patient-profile-img" class="img-circle"/>
+                                <h3>Irshad Ahmed</h3>
+                                <p> Excellence Service So, hightly recomended</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#mainbanner" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    </a>
+                    <a class="right carousel-control" href="#mainbanner" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </section>
+            @*<div class="col-md-6 col-md-offset-3">
+                <div class="single-patient ">
+                    <img src="~/Content/assets/images/patient1.png" alt="">
+                    <h3>Patient.Name</h3>
+                    <h5>item.specialist</h5>
+                    <p class="pt-3">Content</p>
+                </div>
+        </div>*@
+        </div>
+    </div>
+</div>
+<!-- Patient Area Starts -->
+<!-- Specialist Area Starts -->
+<div class="specialist-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="section-top ">
+                    <h2 class="text-center">Our specialists</h2>
+                    <p class="text-center">Green above he cattle god saw day multiply under fill in the cattle fowl a all, living, tree word link available in the service for subdue fruit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @*@foreach (var doctor in Model)
+            {*@
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-doctor mb-4 mb-lg-0">
+                        <div class="doctor-img">
+                            <img src="~/Photos/doctor1.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="content-area">
+                            <div class="doctor-name text-center">
+                                <h3>Dr Qurat ul Ain</h3>
+                                <h6>Orthopadic</h6>
+                            </div>
+                            <div class="doctor-text text-center">
+                                <p>If you are looking at blank cassettes on the web, you may be very confused at the.</p>
+                                <ul class="doctor-icon">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @*  *@}
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-doctor mb-4 mb-lg-0">
+                    <div class="doctor-img">
+                        <img src="~/Photos/doctor2.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="content-area">
+                        <div class="doctor-name text-center">
+                            <h3>dand mories</h3>
+                            <h6>sr. faculty plastic surgery</h6>
+                        </div>
+                        <div class="doctor-text text-center">
+                            <p>If you are looking at blank cassettes on the web, you may be very confused at the.</p>
+                            <ul class="doctor-icon">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-doctor mb-4 mb-sm-0">
+                    <div class="doctor-img">
+                        <img src="~/Photos/doctor3.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="content-area">
+                        <div class="doctor-name text-center">
+                            <h3>align board</h3>
+                            <h6>sr. faculty data science</h6>
+                        </div>
+                        <div class="doctor-text text-center">
+                            <p>If you are looking at blank cassettes on the web, you may be very confused at the.</p>
+                            <ul class="doctor-icon">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-doctor">
+                    <div class="doctor-img">
+                        <img src="~/Photos/doctor4.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="content-area">
+                        <div class="doctor-name text-center">
+                            <h3>jeson limit</h3>
+                            <h6>sr. faculty plastic surgery</h6>
+                        </div>
+                        <div class="doctor-text text-center">
+                            <p>If you are looking at blank cassettes on the web, you may be very confused at the.</p>
+                            <ul class="doctor-icon">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Specialist Area Starts -->
+<!-- Hotline Area Starts -->
+<section class="hotline-area text-center section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Contact DoctorOnCall Team</h2>
+                <span>(+92) – 256 567 550</span>
+                <p class="pt-3">Please feel free to contact us <br>Hope for the patients</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hotline Area End -->
+<!-- News Area Starts -->
+<div class="news-area section-padding">
+    <div class="container" id="medical-news">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="section-top ">
+                    <h2 class="text-center">Recent medical news</h2>
+                    <p class="text-center">Green above he cattle god saw day multiply under fill in the cattle fowl a all, living, tree word link available in the service for subdue fruit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-news">
+                    <div class="news-img">
+                        <img src="~/Photos/news1.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="news-text">
+                        <div class="news-date">
+                            22 July 2018
+                        </div>
+                        <h3><a href="blog-details.html">chip to model coeliac disease</a></h3>
+                        <p>Elementum libero hac leo integer. Risus hac part duriw feugiat litora cursus hendrerit bibendum per person on elit.Tempus inceptos posuere me.</p>
+                        <a href="blog-details.html" class="news-btn">read more <i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-news">
+                    <div class="news-img">
+                        <img src="~/Photos/news2.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="news-text">
+                        <div class="news-date">
+                            22 Oct 2018
+                        </div>
+                        <h3><a href="blog-details.html">Galectins An Ancient FaSi Future</a></h3>
+                        <p>Elementum libero hac leo integer. Risus hac part duriw feugiat litora cursus hendrerit bibendum per person on elit.Tempus inceptos posuere me.</p>
+                        <a href="blog-details.html" class="news-btn">read more <i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-news">
+                    <div class="news-img">
+                        <img src="~/Photos/news3.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="news-text">
+                        <div class="news-date">
+                            22 Sep 2018
+                        </div>
+                        <h3><a href="blog-details.html">Getting the Most Out  CLARI</a></h3>
+                        <p>Elementum libero hac leo integer. Risus hac part duriw feugiat litora cursus hendrerit bibendum per person on elit.Tempus inceptos posuere me.</p>
+                        <a href="blog-details.html" class="news-btn">read more <i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

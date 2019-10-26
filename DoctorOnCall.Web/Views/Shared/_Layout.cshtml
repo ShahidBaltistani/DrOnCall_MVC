@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - DoctorOnCall</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/formcss.css" rel="stylesheet" />
+    <link href="~/Content/Home.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/newicons.css" rel="stylesheet" />
+    <link href="~/Content/stepper.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    @*<link href="~/Content/font-awesome.min.css" rel="stylesheet" />*@
+
+
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainmenu">
+                    <span class="glyphicon glyphicon-circle-arrow-down"></span>
+                </button>
+                <a class="navbar-brand" href="#"> DoctorOnCall</a>
+            </div>
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink(" Home", "HomePage", "Home")
+                    </li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Find a Doctor", "DoctorProfile", "Doctor")
+                    </li>
+                    <li>
+                        @Html.ActionLink(" OnlineConsultation", "CreateOnlineConsultation", "OnlineConsultation")
+                    </li>
+                    @*<li>
+                @Html.ActionLink(" Health Blog", "Blog", "HealthBlog")
+            </li>*@
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Specialties <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Specialties in Lahore</a> </li>
+                            <li><a href="#">Specialties in Karachi</a> </li>
+                            <li><a href="#">Specialties in Islamabad</a> </li>
+                        </ul>
+                    </li>
+                    <li ">
+                        @Html.ActionLink(" About Us", "About", "AboutUs")
+                    </li>
+                    <li>
+                        @Html.ActionLink(" Contact Us", "HomePage", "Home")
+                    </li>
+                    @*<li><a href="#"> Notefication <span class="badge">10</span> </a> </li>*@
+                </ul>
+                @if (User.IsInRole("Login"))
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">  Dr Maria Hifza <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div style="padding:15px;">
+                                <img src="~/Photos/doctor3.jpg" class="img-responsive" />
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#"> Profile </a> </li>
+                        <li><a href="#"> Change Password </a> </li>
+                        <li class="divider"></li>
+                        <li><a href="#"> Log Out </a> </li>
+                    </ul>
+                </li>
+            </ul>
+                }
+                else
+                {
+                    <button type="button" class="btn btn-success btn-round pull-right" id="login_button" style="margin-top:8px;margin-left:10px">Login</button>
+                }
+                <button type="button" class="btn btn-success pull-right" id="dr-register-btn" style="margin-top:8px">Join As Doctor</button>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container body-content">
+        @RenderBody()
+
+        @*==============================footer Section========================*@
+
+    </div>
+    <style>
+        #footer {
+            background-color: #0a476f;
+            height: auto;
+        }
+
+        #footer1 {
+            padding-top: 20px;
+            color: white;
+        }
+
+        .footer-text {
+            text-align: center;
+            color: white;
+        }
+
+        #subscribe-section {
+            padding: 30px;
+        }
+
+        body {
+            background-color: #dcddde;
+        }
+    </style>
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="col-md-3 ">
+                        <ul>
+                            <li id="footer1">@Html.ActionLink(" Home", "HomePage", "Home")</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li id="footer1">@Html.ActionLink(" Specialties", "HomePage", "Home")</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li id="footer1">@Html.ActionLink(" About Us", "HomePage", "Home")</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li id="footer1">@Html.ActionLink(" Contact Us", "HomePage", "Home")</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12" id="subscribe-section">
+                    <h3 id="footer1">Subscribe Us</h3>
+                    <form>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" placeholder="Enter Email" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="button" value="Subcribe" class="btn btn-facebook" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <p class="footer-text">
+                Copyright  2015-2019 DoctorOnCall Medicare Pvt. Ltd. - All Rights Reserved
+            </p>
+            <p class="footer-text">
+                Terms and Privacy Policy
+
+            </p>
+            <p class="footer-text">
+                Reproduction of Material from any DoctorOnCall.com pages without permission is strictly prohibited
+
+            </p>
+        </div>
+    </footer>
+
+    <script src="/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+
+
+    @RenderSection("CreateScript", false);
+    @RenderSection("createuser", false);
+    @RenderSection("createconsultation", false);
+    @*@Html.Partial("~/Views/User/_UserLogin.cshtml",new DoctorOnCall.ViewModel.Account.LoginViewModel());*@
+    @*@Html.Partial("~/Views/User/_UserSignUp.cshtml",new DoctorOnCall.ViewModel.Account.SignUpViewModel());*@
+
+    <script>
+        $("#dr-form").hide();
+        $("#dr-register-btn").click(function () {
+            alert("dr btn has clicked")
+            $("#dr-form").show();
+        });
+
+        $("#registration-form").hide();
+        $("#login_button").click(function () {
+            alert("login btn has clicked")
+            $("#registration-form").show()
+        });
+    </script>
+
+
+</body>
+</html>

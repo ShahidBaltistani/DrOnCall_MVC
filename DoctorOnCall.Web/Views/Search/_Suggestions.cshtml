@@ -1,0 +1,76 @@
+﻿
+@using DoctorOnCall.Web.Models
+@model List<SuggestionModel>
+@{
+    string Keyword = ViewBag.Word;
+
+}
+
+@if (Model.Count > 0)
+{
+    <ul class="list-group" style=" position: absolute;margin-left: 13px;   width: 97%; margin-top: 1px;     border: 2px solid #d7d8d8;border-top: 0;max-height: 292px;overflow-y: scroll;">
+
+        <li class="text-center" style="background: lightgray;font-size: 11px;font-weight: bold;font-family: calibri;color: steelblue;">
+            <span>About @Model.Count results (@ViewBag.TimeTaken seconds)</span>
+        </li>
+        @foreach (SuggestionModel suggestion in Model)
+        {
+            <li class="list-group-item addsuggestion" id="@suggestion.Id" data-suggestionname="@suggestion.Title" style=" font-size: 15px;font-family: Calibri ">
+                <a href="/Doctor/DoctorDetails?id=@suggestion.Id" style="text-decoration: none;color: gray">
+                    <div class="row" style="padding-left: 5px">
+
+                        @suggestion.Title
+
+                        @*@foreach (char item in suggestion.Title)
+                            {
+
+                                if (item != ' ')
+                                {
+                                    if (Keyword.ToLower().Contains(item.ToString().ToLower()))
+                                    {
+                                        <div style="float: left">
+                                            @item
+                                        </div>
+
+                                    }
+                                    else
+                                    {
+
+                                        <div>@item</div>
+
+                                    }
+                                }
+                                else
+                                {
+                                      @item
+                                }
+
+
+                            }*@
+
+                    </div>
+                    @if (!string.IsNullOrEmpty(suggestion.SellerName))
+                    {
+                        <div class="row">
+                            @if (!string.IsNullOrEmpty(suggestion.SellerImage))
+                            {
+                                <img src="/Content/Images/Doctor/@Url.Content(suggestion.SellerImage)" class="img-circle" style="height: 20px; width: 20px; margin-left: 5px" />
+
+                            }
+                            else
+                            {
+                                <span class="glyphicon glyphicon-briefcase" style="margin-left: 5px"></span>
+                            }
+                            <span style="font-size: 13px"> @suggestion.SellerName</span> &nbsp;&nbsp;&nbsp;
+                        </div>
+                    }
+                </a>
+            </li>
+        }
+
+
+
+
+    </ul>
+
+}

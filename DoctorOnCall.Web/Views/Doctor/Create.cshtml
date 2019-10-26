@@ -1,0 +1,261 @@
+﻿@model DoctorOnCall.ViewModel.Doctors.DoctorCreateViewModel
+
+@{
+    ViewBag.Title = "CreateDoctor";
+}
+
+
+@*///////////////////////////////////////////////////////////////////////////////////////*@
+
+
+<style>
+    textarea {
+        margin: 0px 0px;
+        padding: 5px;
+        height: 70px;
+        line-height: 16px;
+        width: 96%;
+        display: block;
+        margin: 0px auto;
+    }
+    .text-box {
+        height: 40px;
+    }
+    .text-area{
+        border:1px solid black;
+    }
+</style>
+<div class="container" style="background-color:white">
+    <h1 style="text-align:center;color:forestgreen"> Join As A Doctor</h1>
+    <h3 style="text-align:center;color:forestgreen">Home/ Join As A Doctor</h3>
+    <p style="text-align:center">
+        Join as Doctor
+        Join the largest Healthcare Network of Pakistan. We add only PMDC registered doctor. Only apply if you are registered with PMDC. Exemption for physiotherapist or psychologist.
+    </p>
+
+    @*<p class="text-center" <a style="color:forestgreen" href="#">Home </a>/Join As A doctor</p>*@
+
+</div>
+<br />
+<br />
+<div class=" tab-content" id="dr-form">
+    @using (Html.BeginForm("Create", "Doctor", FormMethod.Post, new
+    {
+        @class = "htmlAttributes ",
+        style = "",
+        enctype = "multipart /form-data",
+        @id = ""
+    }))
+
+    {
+
+    <div class="container" style="background-color:white;padding:20px" id="first-form">
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="col-md-3 col-md-offset-1">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "Enter Your Name" } })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "Enter Your Email" } })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "Enter Your PhoneNumber" } })
+                </div>
+            </div>
+
+        </div>
+        <br />
+        <br />
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="col-md-9 col-md-offset-1">
+                    @Html.EditorFor(model => model.Speciality.Name, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "Enter Your Speciality" } })
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-1">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "Enter Your Password" } })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-1">
+                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "ConfirmPassword" } })
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="col-md-9 col-md-offset-1">
+                    @Html.EditorFor(model => model.DoctorFee, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "Enter Your DoctorFee" } })
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-1">
+                    @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "Enter Your Designation" } })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-1">
+                    @Html.EditorFor(model => model.PmdcNumber, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "Enter Your PmdcNumber" } })
+                </div>
+            </div>
+
+
+        </div>
+        <br />
+        <br />
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="col-md-9 col-md-offset-1">
+                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "Enter Your City" } })
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="col-md-9 col-md-offset-1">
+                    <input type="button" value="Next" id="first" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+
+    </div>
+        <br />
+        <div class="container" style="padding:20px" id="second-form">
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Images.ImageUrl, new { @class = "control-label" })
+                    <div class="col-md-12">
+                        <input type="file" name="ProfileImage" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Document, new { @class = "control-label" })
+                    <div class="col-md-12">
+                        <input type="file" name="ProfileImage" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.VedioLinks, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "Enter Your VedioLinks" } })
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="col-md-12">
+                <div class=" col-md-6">
+                    <div class="form-group">
+                        @Html.TextAreaFor(model => model.Qualification, new { @class = "form-control text-area", placeholder = "Qualification", @rows = "4", @cols = "6" })
+                    </div>
+                </div>
+
+                <div class=" col-md-6">
+                    <div class="form-group">
+                        @Html.TextAreaFor(model => model.Achivement, new { @class = "form-control text-area", placeholder = "Achivement", @rows = "4", @cols = "6" })
+                    </div>
+                </div>
+
+            </div>
+           
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.TextAreaFor(model => model.PracticeDetails.HospitalName, new { @class = "form-control text-area", placeholder = "Your Hospital timings,Days,Fee etc", @rows = "4", @cols = "6" })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.TextAreaFor(model => model.ProfessionalStatement, new { @class = "form-control text-area", placeholder = "ProfessionalStatement", @rows = "4", @cols = "6" })
+
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Experience, new { @class = "form-control text-area", placeholder = "Experience", @rows = "4", @cols = "6" })
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.About, new { @class = "form-control text-area", placeholder = "About", @rows = "4", @cols = "12" })
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input type="button" value="Back" id="second" class="btn btn-success " />
+                        <input type="submit" value="Create" class="btn btn-danger" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+</div>
+
+
+@section CreateScript{
+    <script>
+        $("#second-form").hide();
+        $("#first").click(function () {
+            $("#first-form").hide();
+            $("#second-form").show();
+        });
+        $("#second").click(function () {
+            $("#second-form").hide();
+            $("#first-form").show();
+
+        });
+
+    </script>
+    @*<script>
+            $(document).ready(function ()
+            {
+                $("#speciality").change(function () {
+                    var ddtext = $("#speciality option : selected").text();
+                    $("#hidden1").val(ddtext );
+                })
+            })
+            $(document).ready(function () {
+                $("#city").change(function () {
+                    var ddtext = $("#city option : selected").text();
+                    $("#hidden2").val(ddtext);
+                })
+            })
+        </script>*@
+}

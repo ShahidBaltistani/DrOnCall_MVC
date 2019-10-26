@@ -1,0 +1,114 @@
+﻿@model DoctorOnCall.ViewModel.Account.SignUpViewModel
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="registration-form">
+
+    <ul class="nav nav-tabs">
+        <li role="presentation" id="one">
+            <a data-toggle="tab" href="#login-form"> Login</a>
+        </li>
+        <li role="presentation" id="two" class="active">
+            <a data-toggle="tab" href="#signup-form"> SignUp</a>
+        </li>
+    </ul>
+
+
+    <div class="tab-content ">
+
+        <div class=" tab-pane fade " id="login-form">
+            @using (Html.BeginForm("UserLogin", "User", FormMethod.Post, new { @class = "form-horizontal form-heading ", enctype = "multipart/form-data" }))
+            {
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="input-group-text">
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your Email" } })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="input-group-text">
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your Password" } })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="form-group">
+                        <div class="input-group-btn">
+                            <div class="col-md-6 ">
+                                <input type="submit" id="second" value="Login" class="btn btn-success" href="#payment-method">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group-text checkbox">
+                            <label><input type="checkbox" />Remember Me</label>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+        <div class=" tab-pane fade in active" id="signup-form">
+            @using (Html.BeginForm("UserSignUp", "User", FormMethod.Post, new { @class = "form-horizontal form-heading ", enctype = "multipart/form-data" }))
+            {
+                <div class="col-md-12">
+                    @*<div class="form-group">
+                            <div class="input-group-text">
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your Name" } })
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="form-group">
+                        <div class="input-group-text">
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your Email" } })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="input-group-text">
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your PhoneNumber" } })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="input-group-text">
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your Password" } })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="input-group-text">
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your ConfirmPassword" } })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group-btn">
+                            <div class="col-md-6 ">
+                                <input type="submit" id="second" value="SignUp" class="btn btn-success" href="#payment-method">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+  @*@RenderPage("../Shared/Register.cshtml");*@
+

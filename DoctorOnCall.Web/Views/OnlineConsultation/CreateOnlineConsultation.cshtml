@@ -1,0 +1,166 @@
+﻿@model DoctorOnCall.ViewModel.OnlineConsultations.OnlineConsultationViewModel
+@{
+    ViewBag.Title = "CreateOnlineConsultation";
+}
+
+
+@*<ul class="nav nav-tabs hidden" >
+        <li role="presentation" id="one" class="active">
+            <a data-toggle="tab" href="#speciality"><span class="glyphicon glyphicon-pencil"></span> speciality</a>
+        </li>
+
+        <li role="presentation" id="two">
+            <a data-toggle="tab" href="#patient-details"><span class="glyphicon glyphicon-map-marker"></span> patient Details</a>
+        </li>
+        <li role="presentation" id="three">
+            <a data-toggle="tab" href="#Location"><span class="glyphicon glyphicon-map-marker"></span> Address and Timing</a>
+        </li>
+
+    </ul>*@
+
+
+<section class="container ">
+    <h2 class="text-center">How To Book OnlineConsultation?</h2>
+    <p class="text-center">There are 3 really easy steps to book a consultation</p>
+    <div class="stepwizard col-md-offset-3">
+        <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step">
+                <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                <p>Step 1</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                <p>Step 2</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                <p>Step 3</p>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<br />
+<br />
+<div class="tab-content ">
+    @using (Html.BeginForm("CreateOnlineConsultation", "OnlineConsultation", FormMethod.Post, new { @class = "form-horizontal form-heading ", enctype = "multipart/form-data" }))
+    {
+        <section class="container" id="speciality" >
+                <div class="col-md-4 col-md-offset-1 ">
+                    <img class="img-rounded" src="~/Photos/doctor3.jpg" />
+                </div>
+                <div class="col-md-4 col-md-offset-1">
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                            <h5>STEP:1</h5>
+                            <h3>Chose Speciality</h3>
+
+                            @Html.DropDownListFor(model => model.Speciality, new List<SelectListItem>
+                            {
+                            new SelectListItem{Text="ENT" , Value="Ent"},
+                            new SelectListItem{Text="Gynalogist", Value="Gynalogist"},
+                            new SelectListItem{ Text="Orthopadic", Value="Orthopadic"}
+                             }, "--Select Speciality--" , new { @class="form-control"})
+                            <br />
+
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group-btn">
+                            <input type="button" id="first" href="#patient-details" value="Next" class="btn btn-success ">
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="container" id="patient-details">
+
+                <div class="col-md-4 col-md-offset-1 ">
+                    <img class="img-rounded" src="~/Photos/doctor3.jpg" />
+                </div>
+                <div class="col-md-4 col-md-offset-1">
+                    <h5>STEP:2</h5>
+                    <h3>Add Patient Details</h3>
+
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                            @Html.TextBoxFor(model => model.Patient.Name, new { @class = "form-control", placeholder = "Enter Name" })
+                            <br />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                            @Html.TextBoxFor(model => model.Patient.PhoneNumber, new { @class = "form-control", placeholder = "Enter Phone Number" })
+                            <br />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                            @Html.TextBoxFor(model => model.Patient.Email, new { @class = "form-control", placeholder = "Enter Email" })
+                            <br />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group-btn">
+                            <input type="button" id="second" value="Next" class="btn btn-success" href="#payment-method">
+                        </div>
+                        @*<input id="second" type="button" class="btn btn-primary " href="#speciality" value="back" />*@
+                    </div>
+                </div>
+        </section>
+    }
+</div>
+
+<div class="container" id="payment-method">
+        <div class="col-lg-offset-2 col-lg-4">
+            <img class="img-rounded" src="~/Photos/t1.jpg" />
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <div class="input-group-prepend">
+                    <h5>STEP:3</h5>
+                    <h3>Select Payment Method</h3>
+
+                    @Html.DropDownListFor(model => model.PaymentMethod, new List<SelectListItem>
+                    {
+                    new SelectListItem{Text="Easy Paisa" , Value="Easy Paisa"},
+                    new SelectListItem{Text="Bank Transfer", Value="Bank Transfer"},
+                    new SelectListItem{ Text="I Don't Know", Value="I Don't Know"}
+                     }, "--Select Payment Method--" , new { @class="form-control"})
+                    <br />
+
+                </div>
+
+            </div>
+            <div class="form-group">
+                <div class="input-group-btn">
+                    <input type="submit" value="Submit" class="btn btn-success ">
+                </div>
+            </div>
+        </div>
+</div>
+<br />
+<br />
+
+
+
+@section createconsultation{
+    <script>
+        $("#speciality").show();
+        $("#patient-details").hide();
+        $("#payment-method").hide();
+        $("#first").click(function () {
+            $("#speciality").hide();
+            $("#patient-details").show();
+            $("#payment-method").hide();
+        });
+        $("#second").click(function () {
+            $("#speciality").hide;
+            $("#patient-details").hide();
+            $("#payment-method").show();
+        });
+
+    </script>
+}
+
+

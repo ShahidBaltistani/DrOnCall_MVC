@@ -1,0 +1,47 @@
+﻿@model DoctorOnCall.ViewModel.PatientReviews.PatientReviewViewModel
+@{
+    ViewBag.Title = "CreateReview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="background-color:white">
+        <h2>Review : Doctor Shahid Baltistani</h2>
+        <h4 style="color:green">
+            Home/ Find a Doctor/Doctor Shahid Baltistani
+        </h4>
+</div>
+
+<div class="container">
+    @using (Html.BeginForm("PatientReview", "CreateReview", FormMethod.Post, new
+    {
+        @class = "htmlAttributes ",
+        style = "",
+        enctype = "multipart /form-data",
+        @id = ""
+    }))
+
+     {
+        <h3>Patient Experience</h3>
+        <div class="col-md-12">
+            <select class="form-control">
+                <option>Excelent</option>
+                <option>Poor</option>
+                <option>Very Poor</option>
+                <option>Good</option>
+                <option>VeryGood</option>
+            </select>
+        </div>
+        <br />
+        <br />
+        <div class="col-md-12">
+                @Html.TextAreaFor(model => model.Content, new { @class = "form-control text-area", placeholder = "Write Review..", @rows = "4", @cols = "12" })
+        </div>
+        <br />
+        <div class="col-md-12">
+         <input type="submit" class="btn btn-success" value="Submit" />
+        </div>
+        <br />
+        <br />
+     }
+</div>
+

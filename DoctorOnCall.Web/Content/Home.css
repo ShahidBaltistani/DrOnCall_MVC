@@ -1,0 +1,318 @@
+﻿.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-default {
+    padding: 5px 0px;
+}
+.container{
+    width:100%;
+}
+
+.menu img {
+    width: 275px;
+    margin-left: -2px;
+}
+
+.men {
+    padding: 12px 6px 5px;
+}
+.navbar-links {
+    margin: 3px 8px 0 0;
+}
+
+.men ul li a {
+    display: inline-block;
+    padding: 10px 8px;
+}
+
+.floatright {
+    float: right;
+}
+
+
+.navbar-default .navbar-nav > li > a {
+    color: #111;
+}
+
+.navbar-default .navbar-nav > .active-menu > a {
+    color: #f57462;
+    background-color: transparent;
+}
+.social-icons 
+{
+    list-style:none;
+}
+
+.contact-info 
+{
+    margin-top: 10px;
+}
+#banner-text {
+    padding-bottom: 50px;
+    padding-left: 50px;
+}
+.links-btn{
+    margin-top:25px;
+
+}
+.banner {
+    background-image: url('Photos/banner-bg.jpg');
+    background-repeat: no-repeat;
+    /*background-size: cover;*/
+}
+.background {
+    background-color: #eff1f0;
+    background-size: cover;
+}
+.navigation-bar 
+{
+    /*margin-left: -40px;*/
+}
+.links-btn .btn {
+    padding: 12px 20px;
+    /*float:right;*/
+    font-family: Nexa boldbold;
+    font-size: 1.5em;
+}
+.tagline {
+
+    margin-top: 300px;
+    font-family: "Roboto",sans-serif;
+    color: cornflowerblue;
+}
+.apt-btn 
+{
+    margin-top:10px;
+
+}
+.sph-title {
+    /*margin-left: 515px;*/
+    padding-top: 65px;
+    font-family: "Ubuntu",sans-serif;
+    /*font-size: 36px !important;
+    font-weight: 700;*/
+    color: #222;
+}
+.sph-tagline 
+{
+    /*margin-left:540px;*/
+    font-size: 1em;
+}
+.sph-slider 
+{
+    padding-top:60px;
+
+}
+.sph-slider .col-md-3{
+    margin-bottom:15px;
+}
+.sph-slider .col-md-3 img{
+    width:100%;
+}
+.doctor-name {
+    font-size: 1.5em;
+    font-family: Assassin$;
+    text-align: center;
+}
+.doctor-tagline {
+    color: darkslategrey;
+    text-align: center;
+}
+.doctor-social-icons a .fa
+{
+    padding-right:10px;
+}
+
+
+.emg-contact {
+    padding:20px 0px;
+    background-color:lightblue;
+    width: 100%;
+    font-family: "Ubuntu",sans-serif;
+    color:darkslategrey;
+}
+.welcome-img {
+    width: 100%;
+    margin-top: 60px;
+}
+.welcome-heading {
+    margin-top: 30px;
+    font-family: "Ubuntu",sans-serif;
+}
+.patients-rev {
+    margin-top: 40px;
+}
+.footer {
+    font-size: 36px;
+    padding: 50px 0px;
+    margin-top: 20px;
+    /*position:fixed;*/
+    width: 100%;
+    background-color: lightblue;
+}
+.footer h1{
+    font-size:36px;
+}
+.footer-social-icons a .fa {
+    margin-top:20px;
+    padding-right: 25px;
+}
+.footer-1 {
+    background-color: aliceblue;
+    padding:50px 0px;
+    width: 100%;
+    color:darkslategrey;
+}
+
+.footers > ul > li > a {
+    color: #ffffff;
+}
+
+    .footers > ul > li > a:hover {
+        color: #808080;
+    }
+
+/**[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    background-color: lightgray;
+}*/
+
+    *[role="form"] h2 {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 40px;
+        font-weight: 600;
+        color: #000000;
+        margin-top: 5%;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+
+.form-heading {
+    font-family: 'nexalight';
+    margin-top: 40px;
+}
+
+
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .nav > li > a {
+        padding: 15px 5px;
+    }
+    .men ul li a {
+        display: inline-block;
+        padding: 10px 4px;
+        font-size: smaller;
+    }
+    .navbar-links > .btn {
+        font-size: xx-small;
+    }
+    .navbar-links {
+        margin: 7px 4px 0 0;
+    }
+    .menu img {
+        width: 195px;
+        margin-left: -2px;
+    }
+    .men {
+        padding: 3px 6px;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 480px) {
+    .logo {
+        float: left;
+    }
+
+    .floatright {
+        float: left;
+    }
+
+    .men ul {
+        width: 100%;
+    }
+
+        .men ul li a {
+            padding: 10px;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+    .links-btn .btn {
+        padding: 6px 12px;
+        font-size: x-large;
+    }
+
+    .navbar-toggle {
+        margin-top: 18px;
+    }
+
+    .navbar-links {
+        margin: 0px 0px 10px 16px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .logo {
+        float: left;
+    }
+
+    .floatright {
+        float: left;
+    }
+
+    .men ul {
+        width: 100%;
+    }
+
+        .men ul li a {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+    .links-btn .btn {
+        padding: 6px 12px;
+        font-size: large;
+    }
+
+    .emg-contact h1 {
+        font-size: medium;
+    }
+
+    .footer h1 {
+        font-size: 24px;
+    }
+
+    .footer {
+        font-size: 24px;
+    }
+
+    .navbar-toggle {
+        margin-top: 16px;
+    }
+
+    .navbar-links {
+        margin: 0px 0px 10px 10px;
+    }
+    .btn_search .btn_search 
+    {
+        height: 50px;
+        position: absolute;
+        right: 0;
+        color: #fff;
+        font-size: 1rem;
+        top: 0;
+        border: 0;
+        padding: 0 25px;
+        height: 50px;
+        cursor: pointer;
+        outline: 0;
+        border-radius: 0 3px 3px 0;
+        background-color: #74d1c6;
+    }
+   
+}

@@ -1,0 +1,115 @@
+﻿@*@model DoctorOnCall.ViewModel.DoctorsViewModel.DoctorCreateViewModel*@
+
+@*@{
+    ViewBag.Title = "SearchForDoctor";
+    Layout = "~/Areas/Administration/Views/Shared/_Layout.cshtml";
+}*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/SearchDoctor.css" rel="stylesheet" />-
+    <link href="~/SearchForDrStyle/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/SearchForDrStyle/css/bootstrap.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body style="background-color: #ffffff">
+    <div class="bg-cover">
+        <div>
+            <h1 class="text-center doctor-heading">FIND A DOCTOR!</h1>
+            <div class="col-md-12">
+                <input type="text" class=" glyphicon-search search-bar" placeholder="EX.Name , Specialization ..." style="height:48px; margin-top:20PX;" />
+                <a href="list.html" type="submit" class="btn-outline-primary btn-lg">Search</a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <h1 class="font-weight-light text-center">DISCOVER THE <b class="text-success">ONLINE</b> APPOINTMENT!</h1>
+    <h3 class="font-weight text-center text-primary">Find, Book or Consult Doctor Online</h3>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="row offset-1">
+        <div class="col-md-3  ml-5 mathod" style="background-image: url('~/Photos/facebook-profile-pic.jpg');">
+            <h3 class="text-center text-success mathod-text">Search For doctor</h3>
+            <p class="text-center">Search doctor according to your loacation which is suitable for you</p>
+        </div>
+        <div class="col-md-3 ml-5 mathod" style="background-image: url('~/Photos/findoninternet.jpg');">
+            <h3 class="text-center text-success mathod-text">View Profile</h3>
+            <p class="text-center">View profiles of doctor and select suitable doctor for you</p>
+        </div>
+        <div class="col-md-3 ml-5 mathod" style="background-image: url('~/Photos/bookappointment.jpg');">
+            <h3 class="text-center text-success mathod-text">Book Appointment</h3>
+            <p class="text-center">Book appointment with your selected<br /> doctor</p>
+        </div>
+
+
+    </div>
+    <p class="text-center">
+        <a href="list.html" class="btn btn-lg btn-outline-primary mt-5"> FIND A DCOTOR </a>
+    </p>
+    <br />
+    <br />
+
+    <div class="row justify-content-center ml-5">
+        <div class="col-xl-4 col-lg-5 col-md-6">
+            <div class="list_home">
+                <div class="list_title">
+                    <div> <img src="~/Photos/sbc.JPG" /></div>
+                </div>
+                <ul class="city_l" style="list-style:none; margin-left:-40px;">
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Lahore</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Islamabad</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Rawalpindi</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Karachi</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Faislabad</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Multan</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Shaikhpura</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Kasooe</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Sarghoda</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">More...</h5></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-5 col-md-6">
+            <div class="list_home">
+                <div class="list_title">
+                    <div> <img src="~/Photos/sbt.JPG" /></div>
+                </div>
+
+                <ul class="city_l" style="list-style:none; margin-left:-40px;">
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Allergist</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Cardiologist</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Chiropractor</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Dentist</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Dermatologist</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Gastroenterologist</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Ophthalmologist</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Optometrist</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">Pediatrician</h5></a></li>
+                    <li class="city bg-dark mt-3"><a href="list.html"><h5 class="p-3">More...</h5></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+
+
+
+
+
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

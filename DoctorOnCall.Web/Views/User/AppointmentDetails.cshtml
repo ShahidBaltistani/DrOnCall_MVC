@@ -1,0 +1,46 @@
+﻿@using DoctorOnCall.ViewModel
+@model AppointmentViewModel
+@{
+    ViewBag.Title = "AppointmentDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+   
+</head>
+<body style="background:#d0c8c8">
+    <section class="container" style="background:white">
+        <div>
+            <h1>Appointment Details</h1>
+            <p>Home/User DashBoard/Appointment Details</p>
+
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Patient Name:</h3>
+                <p>@Model.PatientName</p>
+                <h3>Timings: </h3>
+                <p>@Model.AppointmentTime</p>
+                <h3>Location :</h3>
+                <p>@Model.AppointmentType</p>
+                <h3>Contact Doctor </h3>
+                <p>03441085324</p>
+
+            </div>
+            <div class="col-lg-6">
+                <h3>Appointment Status :</h3>
+                <p><span class="badge bg-success">@Model.AppointmentStatus</span></p>
+                <h3>Doctor Name :</h3>
+                <p>@Model.DoctorName</p>
+                <h3>Doctor Fee :</h3>
+                <p>@Model.DoctorFee</p>
+            </div>
+        </div>
+    </section>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>

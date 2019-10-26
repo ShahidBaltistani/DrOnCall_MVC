@@ -1,0 +1,48 @@
+﻿
+/******* Product Summary Styles ********/
+
+
+#cardtext {
+    text-align: center;
+}
+
+.card-img-top {
+    width: 270px;caption-sidecc
+    height: 200px;
+    padding-top: 10px;
+}
+.background {
+    background-image: url('../Photos/b1.jpg');
+}
+.text-boxs {
+    margin-right:10px;
+    margin-left:60px;
+}
+/*----------------------------DoctorForm1---------------------------------------------*/
+.control-label{
+    color:white;
+}
+/*----------------------------DoctorDetails---------------------------------------------*/
+.list-group {
+    border-radius: 0px;
+}
+
+.list-group-item {
+    border: 0;
+    border-top: 1px dotted;
+    border-radius: 0 !important;
+}
+
+.custom-checkbox {
+    height: 25px;
+    width: 25px;
+}
+
+label {
+    position: absolute;
+    /*margin-top: 6px;
+    margin-left: 10px;*/
+}
+
+/*----------------------------OnlineConsultation---------------------------------------------*/
+

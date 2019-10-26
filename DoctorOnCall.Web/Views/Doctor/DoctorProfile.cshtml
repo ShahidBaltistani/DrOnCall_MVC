@@ -1,0 +1,249 @@
+﻿@*@model IEnumerable<DoctorOnCall.ViewModel.Doctors.DoctorProfileViewModel>*@
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<DoctorOnCall.ViewModel.Doctors.DoctorProfileViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #profile-img {
+        padding-top: 20px;
+        height: 130px;
+        width: 120px;
+    }
+
+    .advertisement-section {
+        background-color: white;
+        height: auto;
+        padding: 20px;
+    }
+
+    #doctorprofile-section {
+        background-color: white;
+    }
+
+    #advertisement-img {
+        width: 305px;
+        height: 300px;
+    }
+</style>
+<div class="container" style="background-color:white">
+    <h2 style="text-align:center">Best PMDC Verified Doctors In Lahore</h2>
+    <p style="text-align:center">
+        Here is the list of best PMDC Verified doctors in Lahore. Find complete details, timings, patient reviews and contact information.
+        Book appointment or take online video consultation with the listed doctors.
+        Call at DoctorOnCall helpline: 042-32591427 to schedule your appointment.
+    </p>
+</div>
+<br />
+<br />
+<div>
+    <div class="row">
+        <div class="col-lg-3">
+            <input type="text" value="Doctor Name" class="form-control" />
+        </div>
+        <div class="col-lg-3">
+            <select class="form-control">
+                <option value="-1" disabled>--Speciality--</option>
+                <option>Orthopadic</option>
+                <option>ENT</option>
+                <option>Gynachologist</option>
+
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <select class="form-control">
+                <option value="-1" disabled>--City--</option>
+                <option>Karachi</option>
+                <option>Lahore</option>
+                <option>Islamabad</option>
+
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <input type="number" value="Fee" class="form-control" maxlength="5000" min="500" />
+        </div>
+        <div class="col-lg-2">
+            <input type="button" value="Search" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+<br />
+<br />
+
+<div class="container">
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Book Appointment <span id="appointment-for-doctor"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+
+                        @*@using (Html.BeginForm("BookApointment", "Doctor", FormMethod.Post, new { @class = "htmlAttributes" }))*@
+
+                        <form method="post">
+                            <div class="col-md-8 col-md-offset-2">
+
+                                <input type="hidden" id="doctor-id" value="" />
+
+                                <div class="form-group">
+                                    <div class="input-group-text">
+                                        <input type="text" id="name" placeholder="Enter Name" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group-text">
+                                        <input type="text" id="phoneNumber" placeholder="Enter Phone Number" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group-text">
+                                        <input type="date" id="dateTime" placeholder="Enter  DateTime" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @*<select name="appointmentType" id="appointmentType">
+                <option value="BookAppointment">BookAppointment</option>
+                <option value="OnlineConsultation">OnlineConsultation</option>
+            </select>*@
+                                    <div class="input-group-text">
+                                        <input type="radio" name="appointmentType" id="appointmentType" value="bookAppointment" /> BookAppointment
+                                        <input type="radio" name="appointmentType" id="appointmentType" value="onlineConsultation" />  OnlineConsultation
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input type="submit" value="Book Now" onclick="BtnClick()" class="btn btn-success btn-danger" />
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8">
+            @foreach (var doctor in Model)
+            {
+                <div class="row doctor-profile-head" id="doctorprofile-section">
+                    <div class="col-md-3">
+                        <img src="~/Photos/doctor3.jpg" id="profile-img" />
+                    </div>
+                    <div class="col-md-6 ">
+                        <h3>@doctor.Name</h3>
+                        @*<h3>@doctor.Speciality.Name</h3>*@
+                        <h3 style="color :springgreen">@doctor.Qualification</h3>
+                        <p>@doctor.Designation</p>
+                        <p>@doctor.Experience</p>
+                        <strong>Contact Number : </strong> <h3 style="color:red">0300-1234567</h3>
+                        @Html.ActionLink("Write Review", "PatientReview", new { id = doctor.Id }) |<p> To @doctor.Name</p>
+
+                        <br />
+                        <br />
+                    </div>
+                    <div class="col-md-3" style="padding:15px">
+                        <img src="~/Photos/stars.png" /><p>Comment<span class="badge">10</span></p>
+                        <p><span class="glyphicon glyphicon-apple"></span>@doctor.Address.StreetAddress</p>
+                        <p><span class="glyphicon glyphicon-apple"></span>@doctor.DoctorFee  PKR</p>
+                        <p><strong>Saturday, Sunday</strong> </p>
+                        @Html.ActionLink("DoctorDetails", "DoctorDetails", new { id = doctor.Id }) |
+                        <br />
+                        <br />
+                        <button type="button" id="appointment-modal" class="btn btn-success appointment-modal" data-doctor-id="@doctor.Id" data-doctor-name="@doctor.Name">Book Appointment</button>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <br />
+            }
+        </div>
+
+        <div class="col-md-4">
+            <div class="advertisement-section">
+                <h3>Asvertisement</h3>
+                <img src="~/Photos/welcome.png" alt="advertisement-img" id="advertisement-img" />
+            </div>
+            <br />
+            <div class="advertisement-section">
+                <h3>Asvertisement</h3>
+                <img src="~/Photos/welcome-photo.jpg" alt="advertisement-img" id="advertisement-img" />
+            </div>
+        </div>
+
+    </div>
+    Page@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount)
+    <div>
+        @Html.PagedListPager(Model, page => Url.Action("DoctorProfile", new { page = page }))
+    </div>
+</div>
+<br />
+<br />
+<script src="/Scripts/jquery-1.12.4.min.js"></script>
+<script src="/Scripts/bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $(".appointment-modal").click(function () {
+            var doctorName = $(this).data("doctor-name");
+            var doctorId = $(this).data("doctor-id");
+            $("#appointment-for-doctor").html(doctorName);
+            $("#doctor-id").val(doctorId);
+            $("#myModal").modal();
+
+
+        });
+    });
+
+
+    function BtnClick() {
+        debugger
+        var name = $("#name").val();
+        var phoneNumber = $("#phoneNumber").val();
+        var dateTime = $("#dateTime").val();
+        var appointmentType = $("#appointmentType").val();
+        var obj = {
+            Name: name,
+            PhoneNumber: phoneNumber,
+            DateTime: dateTime,
+            AppointmentType: appointmentType,
+            Doctor: {
+                DoctorId: $("#doctor-id").val()
+            }
+        };
+        FormSubmit(obj);
+    }
+
+    function FormSubmit(obj) {
+        $.ajax({
+            url: "/Doctor/BookAppointment",
+            method: "POST",
+            data: obj,
+            success: function (data) {
+                alert(data);
+                $("#myModal").modal();
+            },
+            error: function (err) {
+                console.error(err);
+
+            }
+
+        })
+    }
+
+</script>
+
+

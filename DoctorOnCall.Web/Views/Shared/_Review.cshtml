@@ -1,0 +1,59 @@
+﻿@model DoctorOnCall.ViewModel.PatientReviews.PatientReviewViewModel
+@{
+    ViewBag.Title = "CreateReview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="background-color:white">
+    <div>
+        <h2>Review : Doctor Shahid Baltistani</h2>
+        <h4 style="color:green">
+            Home/ Find a Doctor/Doctor Shahid Baltistani
+        </h4>
+    </div>
+</div>
+<div class="container">
+    @using (Html.BeginForm("PatientReview", "CreateReview", FormMethod.Post, new
+    {
+        @class = "htmlAttributes ",
+        style = "",
+        enctype = "multipart /form-data",
+        @id = ""
+    }))
+
+    {
+        <div class="container">
+            <h3>Patient Experience</h3>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <span class="fa fa-star checked"> </span>
+                        <span class="fa fa-star checked"> </span>
+                        <span class="fa fa-star checked"> </span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Content, new { @class = "form-control text-area", placeholder = "Write Review..", @rows = "4", @cols = "12" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="btn-group">
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-success" value="Submit" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+
+        </div>
+    }
+</div>
+
+

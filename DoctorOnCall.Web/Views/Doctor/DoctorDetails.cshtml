@@ -1,0 +1,283 @@
+﻿@model DoctorOnCall.ViewModel.Doctors.DoctorDetailsViewModel
+@{
+    ViewBag.Title = "DoctorDetails";
+}
+<style>
+    .dr-details-head {
+        padding: 0px 5px 5px 20px;
+    }
+
+    .dr-details {
+        padding: 0px 5px 5px 45px;
+    }
+
+    #doctor-details-page {
+        background-color: white;
+        height: auto;
+        padding: 20px;
+    }
+
+    #doctor-profile-image {
+        height: 200px;
+        width: 180px;
+    }
+
+    #about-doctor {
+        background-color: white;
+        padding: 20px;
+    }
+
+    #doctor-details-list {
+        background-color: white;
+        padding: 20px;
+    }
+
+    #map {
+        background-color: white;
+        width: 600px;
+        height: 200px;
+    }
+    #patient-reviews
+    {
+        padding:20px;
+    }
+</style>
+<div class="container">
+    <div class="row" id="doctor-details-page">
+        <div class="col-md-3 col-md-offset-1">
+            <img src="~/Photos/doctor1.jpg" alt="doctor-profile-image" id="doctor-profile-image" />
+            @*<img src="/Content/Images/Doctor/Url.Content(Model.ProfileImage)" class="img-thumbnail img-responsive" />*@
+        </div>
+        <div class="col-md-8">
+
+            <h3> @Model.Name</h3>
+           <h3>@Model.Speciality.Name</h3>
+            <img src="~/Photos/stars.png" slt="review" class="img-responsive" 145 />
+            <h5>Address :</h5>
+          <p>@Model.Address.StreetAddress</p>&nbsp;
+            @*<a href="" target="_blank">View On map</a>*@
+            @*<div class="map-area">
+             <iframe width="650" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=@Model.StreetAddress.Replace(" ","%20")&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>*@
+            <input type="button" value="Book Appointment" class="btn btn-danger" />
+            @*<input type="button" value="Book Appointment" class="btn btn-default" />*@
+        </div>
+    </div>
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="about" id="about-doctor">
+                <h3>About </h3>
+                <h3>@Model.Name</h3>
+                <p>@Model.About</p>
+            </div>
+            <br />
+
+            <div class="list-group" id="list-tab">
+                <a class="list-group-item active" id="list-Education-list" data-toggle="list" href="#">Education</a>
+                <a class="list-group-item" id="list-Experience-list" data-toggle="list" href="#">Experience</a>
+                <a class="list-group-item" id="list-Service-Procedure-list" data-toggle="list" href="#" >Service Procedure</a>
+                <a class="list-group-item" id="list-Practice-Details-list" data-toggle="list" href="#" >Practice Details</a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="dr-details-head" id="doctor-details-list">
+                <h2>Professional Statement</h2>
+                <div class="dr-details">
+                    <p>Mussum ipsum cacilds, vidis litro abertis</p><br />
+                    <p> Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Nullam mollis. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapi</p>
+                    <h4>Specializations</h4>
+                    <ul>
+                        <li>Abdominal Radiology</li>
+                        <li>  Addiction Psychiatry</li>
+                        <li>  Adolescent Medicine</li>
+                        <li>     Cardiothoracic Radiology</li>
+                    </ul>
+                </div>
+            </div>
+            <br />
+            <div class="dr-details-head" id="doctor-details-list">
+                <h2>Education</h2>
+                <div class="dr-details">
+                    <p>Mussum ipsum cacilds, vidis litro abertis</p><br />
+                    <p> Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Nullam mollis. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapi</p>
+                    <h4>Curriculum</h4>
+                    <span class="glyphicon glyphicon-education"></span> &nbsp;<text>Allama Iqbal Medical College Lahore</text> <br />
+                    <span class="glyphicon glyphicon-education"></span>&nbsp;<text>Rashid Latif Medical College Lahore</text><br />
+                    <span class="glyphicon glyphicon-education"></span>&nbsp;<text>Fatima Jinah Medical College </text><br />
+                    <span class="glyphicon glyphicon-education"></span>&nbsp;<text>Quaid e Azam Madical College Karachi</text>
+                </div>
+            </div>
+            <br />
+            <div class="dr-details-head" id="doctor-details-list">
+                <h2>Qualification</h2>
+                <div class="dr-details">
+                    <p>Mussum ipsum cacilds, vidis litro abertis</p><br />
+                    <p> Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Nullam mollis. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapi</p>
+                    <h4>Curriculum</h4>
+                    <span class="glyphicon glyphicon-education"></span> &nbsp;<text>Allama Iqbal Medical College Lahore</text> <br />
+                    <span class="glyphicon glyphicon-education"></span>&nbsp;<text>Rashid Latif Medical College Lahore</text><br />
+                    <span class="glyphicon glyphicon-education"></span>&nbsp;<text>Fatima Jinah Medical College </text><br />
+                    <span class="glyphicon glyphicon-education"></span>&nbsp;<text>Quaid e Azam Madical College Karachi</text>
+                </div>
+            </div>
+            <br />
+            <div class="dr-details-head" id="doctor-details-list">
+                <h2>Experience</h2>
+                <div class="dr-details">
+                    <p>Mussum ipsum cacilds, vidis litro abertis</p><br />
+                    <p> Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Nullam mollis. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapi</p>
+                    <h4>Curriculum</h4>
+                    <span class="glyphicon glyphicon-education"></span> &nbsp;<text>Allama Iqbal Medical College Lahore</text> <br />
+                    <span class="glyphicon glyphicon-education"></span>&nbsp;<text>Rashid Latif Medical College Lahore</text><br />
+                    <span class="glyphicon glyphicon-education"></span>&nbsp;<text>Fatima Jinah Medical College </text><br />
+                    <span class="glyphicon glyphicon-education"></span>&nbsp;<text>Quaid e Azam Madical College Karachi</text>
+                </div>
+            </div>
+            <br />
+            <div class="dr-details-head" id="doctor-details-list">
+                <h2>Practice Details</h2>
+                <div class="dr-details">
+                    <p>Mussum ipsum cacilds, vidis litro abertis</p><br />
+                    <p> Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Nullam mollis. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapi</p>
+                    <hr />
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Hospital Name</th>
+                                <th>Available Days</th>
+                                <th>Timings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> National Hospital</td>
+                                <td> Monday</td>
+                                <td>5:00PM to 8:00PM</td>
+                            </tr>
+                            <tr>
+                                <td>Hameed Latif Hospital</td>
+                                <td>  Tuesday</td>
+                                <td>8:00AM to 8:00PM</td>
+                            </tr>
+                            <tr>
+                                <td>Zia Hospital</td>
+                                <td>  Wednesday</td>
+                                <td>5:00PM to 8:00PM</td>
+                            </tr>
+                            <tr>
+                                <td>Care Hospital</td>
+                                <td> Thursday</td>
+                                <td>5:00PM to 8:00PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <div class="dr-details-head" id="doctor-details-list">
+                <h2>Location</h2>
+                <div class="dr-details">
+                    <h4>Iqra Madical Complex/Gulberg 2 ,Lahore</h4>
+                    <img src="~/Photos/map.PNG" id="map" alt="Google Map" />
+                </div>
+            </div>
+            <br />
+            <div class="patient-review-head" id="patient-reviews" style="background-color:white">
+               
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="avatar">
+
+                        <span  style="width:60px;height:60px;    font-size: 71px;padding: 20px;">L</span>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <h4>Liaqat Ali</h4><img src="~/Photos/stars.png" style="width:60px;height:20px" />
+                        <p>I visited Dr. Gohar Saeed at National Hospital & Medical Centre on Aug 01, 2019 after booking an appointment through DoctorOnCall He is very nice person also.</p>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="~/Photos/facebook-icon.png" style="width:60px;height:60px" />
+                    </div>
+                    <div class="col-md-10">
+                        <h4>Irshad Ahmed</h4><img src="~/Photos/stars.png" style="width:60px;height:20px" />
+                        <p>I visited Dr. Gohar Saeed at National Hospital & Medical Centre on Aug 01, 2019 after booking an appointment through DoctorOnCall He is very nice person also.</p>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="~/Photos/facebook-icon.png" style="width:60px;height:60px" />
+                    </div>
+                    <div class="col-md-10">
+                        <h4>Ahmed Ali</h4>
+                        <img src="~/Photos/stars.png" style="width:60px;height:20px" />
+                        <p>I visited Dr. Gohar Saeed at National Hospital & Medical Centre on Aug 01, 2019 after booking an appointment through DoctorOnCall He is very nice person also.</p>
+                    </div>
+                </div>
+                <hr />
+
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container" style="background-color:white">
+    <div>
+        <h2>Review : Doctor Shahid Baltistani</h2>
+        <h4 style="color:green">
+            Home/ Find a Doctor/Doctor Shahid Baltistani
+        </h4>
+    </div>
+</div>
+<div class="container">
+    @using (Html.BeginForm("PatientReview", "Review", FormMethod.Post, new
+    {
+        @class = "htmlAttributes ",
+        style = "",
+        enctype = "multipart /form-data",
+        @id = ""
+    }))
+
+    {
+        <div class="container">
+            <h3>Patient Experience</h3>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control text-box", placeholder = "Number Of Stars" } })
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.About, new { @class = "form-control text-area", placeholder = "Write Review..", @rows = "4", @cols = "12" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="btn-group">
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-success" value="Submit" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+
+        </div>
+    }
+</div>
+
+<script>
+
+</script>
+

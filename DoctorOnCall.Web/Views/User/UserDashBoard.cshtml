@@ -1,0 +1,64 @@
+﻿@*@model IEnumerable<DoctorOnCall.ViewModel.Appointments.AppointmentCreateViewModel>*@
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<DoctorOnCall.ViewModel.Appointments.AppointmentCreateViewModel>
+
+@{
+    ViewBag.Title = "UserDashBoard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserDashBoard</h2>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body style="background:#f2eef0">
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3" style="background-color:white;">
+                <img src="~/Photos/avatar2.jpg" style="width:250px;padding :20px 0px 0px 10px" />
+                <h3>Saba Hameed</h3>
+                <hr />
+            </div>
+
+            <div class="col-lg-7 col-lg-offset-1">
+                <div style="background:white">
+                    <p>Home/User DashBoard</p>
+
+                </div>
+                @foreach (var appointment in Model)
+                {
+                    <a href="/User/AppointmentDetails/id">
+                        <div class="row" style="background:white;margin-top:10px">
+                            <div class="col-lg-2">
+
+                                <img src="~/Photos/avatar2.jpg" style="object-fit:cover;width:100%;height:auto;padding-top:20px" />
+                            </div>
+                            <div class="col-lg-2">
+                                <h4><small><b>@appointment.Doctor.Name</b></small> </h4>
+                                <p><span class="bg-danger b">@appointment.AppointmentStatus</span></p>
+                                <p>@appointment.AppointmentType</p>
+                            </div>
+                            <div class="col-lg-8 text-right">
+                                <h4>12:30 AM</h4>
+                                <h4>12 /05/2020</h4>
+                            </div>
+                        </div>
+
+                    </a>
+                 }
+                 Page@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount)
+                <div>
+                    @Html.PagedListPager(Model, page => Url.Action("UserDashBoard", new { page = page }))
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

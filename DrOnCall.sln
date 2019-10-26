@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorOnCall.Web", "DoctorOnCall.Web\DoctorOnCall.Web.csproj", "{05FFA65F-1D79-4B0E-AD5B-6A640AECE6EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorOnCall.Model", "DoctorOnCall.Model\DoctorOnCall.Model.csproj", "{31E82FB8-D0E6-4389-B350-1925C02F0957}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorOnCall.Repository", "DoctorOnCall.Repository\DoctorOnCall.Repository.csproj", "{0CEA701E-DF63-42B9-8945-53125E38FBB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorOnCall.ViewModel", "DoctorOnCall.ViewModel\DoctorOnCall.ViewModel.csproj", "{2DC832EE-A6D3-4921-8A2B-86BF9FD872B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorOnCall.API", "DoctorOnCall.API\DoctorOnCall.API.csproj", "{452A3E63-210E-4333-94A9-4DF0781BF1B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorOnCall.Services", "DoctorOnCall.Services\DoctorOnCall.Services.csproj", "{0ABB14D8-7F3B-46A8-A8A2-73D687652DDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05FFA65F-1D79-4B0E-AD5B-6A640AECE6EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05FFA65F-1D79-4B0E-AD5B-6A640AECE6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05FFA65F-1D79-4B0E-AD5B-6A640AECE6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05FFA65F-1D79-4B0E-AD5B-6A640AECE6EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E82FB8-D0E6-4389-B350-1925C02F0957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E82FB8-D0E6-4389-B350-1925C02F0957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E82FB8-D0E6-4389-B350-1925C02F0957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E82FB8-D0E6-4389-B350-1925C02F0957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CEA701E-DF63-42B9-8945-53125E38FBB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CEA701E-DF63-42B9-8945-53125E38FBB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CEA701E-DF63-42B9-8945-53125E38FBB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CEA701E-DF63-42B9-8945-53125E38FBB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DC832EE-A6D3-4921-8A2B-86BF9FD872B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC832EE-A6D3-4921-8A2B-86BF9FD872B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC832EE-A6D3-4921-8A2B-86BF9FD872B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC832EE-A6D3-4921-8A2B-86BF9FD872B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{452A3E63-210E-4333-94A9-4DF0781BF1B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452A3E63-210E-4333-94A9-4DF0781BF1B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452A3E63-210E-4333-94A9-4DF0781BF1B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452A3E63-210E-4333-94A9-4DF0781BF1B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABB14D8-7F3B-46A8-A8A2-73D687652DDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABB14D8-7F3B-46A8-A8A2-73D687652DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABB14D8-7F3B-46A8-A8A2-73D687652DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABB14D8-7F3B-46A8-A8A2-73D687652DDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5ADD3352-F8D6-4D25-BC60-0E3D7C757B67}
+	EndGlobalSection
+EndGlobal
